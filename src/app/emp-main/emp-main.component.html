@@ -1,0 +1,104 @@
+<div class="continer">
+  <table class="table table-primary">
+    <thead>
+    <tr>
+      <th>Emp No</th>
+      <th>Birth Date</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let emp of empData">
+      <td>{{emp.emp_no}}</td>
+      <td>{{emp.birth_date}}</td>
+      <td>{{emp.first_name}}</td>
+      <td>{{emp.last_name}}</td>
+      <td>{{emp.gender}}</td>
+      <td>
+        <a (click)="showMore(emp)" class="btn btn-primary">View More</a>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<!--Show More-->
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Employee Profile</h1>
+
+      <div class="form-group">
+        <label>First Name</label>
+        <input [(ngModel)]="firstName" [ngModelOptions]="{standalone:true}" class="form-control"
+               placeholder="Enter email" type="text">
+
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input [(ngModel)]="lastName" [ngModelOptions]="{standalone:true}" class="form-control"
+               placeholder="Enter email" type="text">
+
+      </div>
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input [(ngModel)]="dob" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="Enter email"
+               type="text">
+
+      </div>
+      <div class="form-group">
+        <label>Hire Date</label>
+        <input [(ngModel)]="hireDate" [ngModelOptions]="{standalone:true}" class="form-control"
+               placeholder="Enter email" type="text">
+
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <input [(ngModel)]="gender" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="Enter email"
+               type="text">
+
+      </div>
+
+
+      <h2>Salary Details</h2>
+      <div class="form-group">
+        <label>Amount</label>
+        <input [(ngModel)]="amount" [ngModelOptions]="{standalone:true}" class="form-control" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>From Date</label>
+        <input [(ngModel)]="fromDate" [ngModelOptions]="{standalone:true}" class="form-control" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>To Date</label>
+        <input [(ngModel)]="toDate" [ngModelOptions]="{standalone:true}" class="form-control" type="text">
+      </div>
+
+      <h2>Designation Details</h2>
+      <div class="form-group">
+        <label>Title</label>
+        <input [(ngModel)]="title" [ngModelOptions]="{standalone:true}" class="form-control" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>From Date</label>
+        <input [(ngModel)]="titleFromDate" [ngModelOptions]="{standalone:true}" class="form-control" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>To Date</label>
+        <input [(ngModel)]="titleToDate" [ngModelOptions]="{standalone:true}" class="form-control" type="text">
+      </div>
+
+      <button class="btn btn-primary" type="submit">Add Employee</button>
+    </div>
+  </div>
+</div>
